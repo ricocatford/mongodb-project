@@ -89,7 +89,9 @@ def edit_record():
         print("")
         for k,v in doc.items():
             if k != "_id":
-                update_doc[k] = input(k.capitalize() + " [" + v + "] > ")
+                new_value = input(k.capitalize() + " [" + v + "] > ")
+                update_doc[k] = new_value.lower()
+                # update_doc[k] = input(k.capitalize() + " [" + v + "] > ")
 
                 if update_doc[k] == "":
                     update_doc[k] = v
